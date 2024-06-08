@@ -47,9 +47,10 @@ type User = {
     isActive: boolean
 }
 
+//Arrays
 let myUser: User = {
     name: "Azeez",
-    isActive: true
+    isActive: true 
 }
 
 const superHeros:User[] = []
@@ -63,5 +64,73 @@ let score: number | string = 33
 score = 44
 score = "53"
 
+type Users = {
+    name: string;
+    id: number;
+}
+
+type Admin = {
+    username: string;
+    id: number;
+}
+
+// Union Types
+let hayzed: Users | Admin = {
+    name: "Azeez", id: 256 
+}
+
+hayzed = {username: "Zizzle", id: 546}
+
+function getDbId(id: number | string){
+    console.log(`DB id is: ${id}`)
+}
+
+getDbId(5)
+getDbId("10")
+
+const data: number[] = [1, 2, 3, 4, 5]
+const data2: string[] = ["1","2", "3", "4", "5"]
+const data3: (string | number | boolean)[] = [1,2,4,"5", "azeez"]
+
+let seatAllotment: "aisle" | "middle" | "window"
+
+seatAllotment = "middle"
+
+// Tuples
+
+let myUsers: [string, number, boolean] = ["1", 1, false]
+
+type myUser = [number, string]
+
+const newUsers: myUser = [1, "azeez"]
+
+// Enums
+const enum SeatChoice {
+    AISLE = "aisle",
+    MIDDLE = "middle",
+    WINDOW = 3,
+    Fourth
+
+}
+
+const hcSeat = SeatChoice.AISLE
+
+//Interface
+
+interface user {
+    readonly dbId: number,
+     email: string,
+     userId: number,
+     googleId?: string,
+     startTrail(): string,
+     getCoupon(couponname:string, value:number): number
+
+}
+ 
+const azeez: user = {dbId: 22, userId: 20, email: "azeez@gmail.com",startTrail: ()=>{
+    return "trail started"
+}, getCoupon:(name, off)=>{
+    return 10
+}}
 
 export{}
