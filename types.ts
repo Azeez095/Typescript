@@ -126,11 +126,19 @@ interface user {
      getCoupon(couponname:string, value:number): number
 
 }
+
+interface user {
+    githubToken: string
+}
+
+interface admin extends user {
+    role: "admin" | "ta" |"learner"
+}
  
-const azeez: user = {dbId: 22, userId: 20, email: "azeez@gmail.com",startTrail: ()=>{
+const azeez: admin = {dbId: 22, userId: 20, email: "azeez@gmail.com",startTrail: ()=>{
     return "trail started"
-}, getCoupon:(name, off)=>{
+}, getCoupon:(name:"Azeez", off:10 )=>{
     return 10
-}}
+},githubToken: "myName", role: "admin"}
 
 export{}
